@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog Produk - CHARMY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="katalog.html" class="logo">
+        <span class="logo__icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" stroke="#3f3338" stroke-width="2"><path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
+        <span class="logo__text">CHARMY</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#">Beranda</a>
+        <a href="katalog.html" class="active">Katalog</a>
+        <a href="#">Tentang Kami</a>
+        <a href="#">Keranjang</a>
+        <a href="#">Pesanan</a>
+        <a href="#">Akun</a>
+      </nav>
+
+      <div class="header__search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="headerSearch" placeholder="Cari produk...">
+      </div>
+
+      <div class="header__icons">
+        <a href="#" class="icon-btn" aria-label="Wishlist"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></a>
+        <a href="#" class="icon-btn" aria-label="Notifikasi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 21h4"/></svg></a>
+        <a href="#" class="icon-btn" aria-label="Keranjang"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l1 13H5zM9 8a3 3 0 0 1 6 0"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== KONTEN KATALOG ===== -->
+  <main class="container catalog">
+    <h1 class="catalog__title">Katalog Produk</h1>
+    <p class="catalog__subtitle">Pilih aksesori lucu yang paling cocok untukmu.</p>
+
+    <div class="toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Cari ganci, bag charm, boneka...">
+      </div>
+      <select id="sortSelect" class="sort" aria-label="Urutkan produk">
+        <option value="newest">Urutkan: Terbaru</option>
+        <option value="price-asc">Urutkan: Harga Terendah</option>
+        <option value="price-desc">Urutkan: Harga Tertinggi</option>
+        <option value="rating">Urutkan: Rating Tertinggi</option>
+        <option value="name">Urutkan: Nama A–Z</option>
+      </select>
+    </div>
+
+    <div class="chips" id="categoryChips">
+      <button class="chip active" data-category="all">Semua Produk</button>
+      <button class="chip" data-category="Ganci">Ganci</button>
+      <button class="chip" data-category="Boneka Mini">Boneka Mini</button>
+      <button class="chip" data-category="Bag Charm">Bag Charm</button>
+    </div>
+
+    <div class="result-info" id="resultInfo" hidden>
+      <span id="resultText"></span>
+      <button class="tag" id="clearCategory" hidden></button>
+    </div>
+
+    <!-- Area ini diisi oleh JavaScript -->
+    <div id="status" class="status" hidden></div>
+    <div id="productGrid" class="grid"></div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="katalog.html" class="logo">
+            <span class="logo__icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" stroke="#3f3338" stroke-width="2"><path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
+            <span class="logo__text">CHARMY</span>
+          </a>
+          <p>Toko online ganci, boneka mini,<br>dan bag charm.</p>
+        </div>
+        <div class="footer__col"><h4>Belanja</h4><a href="katalog.html">Katalog</a><a href="#">Wishlist</a><a href="#">Keranjang</a></div>
+        <div class="footer__col"><h4>Bantuan</h4><a href="#">Cara Pesan</a><a href="#">Pengiriman</a><a href="#">Hubungi Kami</a></div>
+        <div class="footer__col"><h4>Akun</h4><a href="#">Profil Saya</a><a href="#">Pesanan Saya</a><a href="#">Notifikasi</a></div>
+      </div>
+      <div class="footer__bottom">© 2026 CHARMY · Aksesori kecil untuk tas yang lebih cute</div>
+    </div>
+  </footer>
+
+  <!-- Urutan penting: config → api → app -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
